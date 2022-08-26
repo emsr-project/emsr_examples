@@ -194,7 +194,7 @@
   **Usage Syntax**
 
   ```ruby
-  gpu_instance = ems.ComputationInstance(vcpus=15, gpus=1, memory=15)
+  gpu_instance = ems.ComputationInstance(vcpus=15, gpus=1, memory=15, gpu_type="tesla_t4", cloud_cmd="m-batch")
   ```
 
   **Parameter**
@@ -210,6 +210,14 @@
   * memory (Int)[Required]
     
     The memory size, based on Gi. 
+
+  * gpu_type (str)[Optional]
+    
+    The type of the gpu. Only support tesla_t4, tesla_a100, tesla_v100
+
+  * cloud_cmd (str)[Optional]
+    
+    The type of the cluster. Only support m-kube, m-ray, m-batch
 
   **Return Type**
 
