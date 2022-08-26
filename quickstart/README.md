@@ -142,7 +142,7 @@ if __name__ == "__main__":
 We can run experiments executing following command in the terminal. We can simply run `ems-run` with default setting. Also, we can specify client configurations by passing arguments.
 
 ```
-ems_run --client_name="client1" --entrypoint="python run.py"
+ems_run --client_name="corl" --entrypoint="python run.py"
 ```
 
 

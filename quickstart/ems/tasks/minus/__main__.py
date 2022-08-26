@@ -9,7 +9,9 @@ def main(config, args):
   score = - (a ** 2 + b)
 
   # test cuda device
-  c = torch.tensor([1., 2.]).cuda()
+  c = torch.tensor([1., 2.])
+  if torch.cuda.is_available():
+    c = c.cuda()
   print("Cuda available:", torch.cuda.is_available(), torch.cuda.device_count())
   print("Cuda tensor:", c)
 

@@ -109,7 +109,7 @@ def main(config, args):
 
     model = Net().to(device)
     optimizer = optim.Adadelta(model.parameters(), lr=config.params.lr)
-    model.load_state_dict(torch.load(os.path.join(trained_model_path,"mnist_cnn.pt")))
+    model.load_state_dict(torch.load(os.path.join(trained_model_path,"mnist_cnn.pt"), map_location=device))
 
     scheduler = StepLR(optimizer, step_size=1, gamma=config.params.gamma)
     for epoch in range(1, config.params.epochs + 1):
